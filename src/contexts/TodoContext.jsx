@@ -4,7 +4,7 @@ import * as todoAPI from "../apis/todoAPI";
 export const TodoContext = createContext();
 
 function TodoContextProvider({ children }) {
-  const [todoList, setTodoList] = useState({});
+  const [todoList, setTodoList] = useState([]);
 
   // POST -- create Todo
   const createTodo = async (data) => {
@@ -20,7 +20,7 @@ function TodoContextProvider({ children }) {
   const getAllTodos = async () => {
     try {
       const response = await todoAPI.getAllTodos();
-      setTodoList(response.data);
+      setTodoList(response.data.data);
     } catch (error) {
       console.log(error);
     }

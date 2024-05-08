@@ -22,7 +22,7 @@ function Homepage() {
 
   useEffect(() => {
     getAllTodos();
-  });
+  }, []);
 
   // Create todo functionality
   // useState and handler for create todo
@@ -62,7 +62,10 @@ function Homepage() {
             onChange={handleChangeNewTodo}
           />
         </div>
-        <TodoList />
+
+        {todoList.map((item) => (
+          <TodoList key={item.id} task={item.title}/>
+        ))}
         <button
           type="button"
           onClick={handleLogout}
