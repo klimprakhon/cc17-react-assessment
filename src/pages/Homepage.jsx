@@ -67,7 +67,6 @@ function Homepage() {
             onChange={handleChangeNewTodo}
           />
         </div>
-
         {todoList.map((item) => (
           <TodoList key={item.id} todo={item.title} todoId={item.id} />
         ))}

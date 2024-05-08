@@ -10,7 +10,8 @@ function TodoContextProvider({ children }) {
   const createTodo = async (data) => {
     try {
       const response = await todoAPI.createTodo(data);
-      setTodoList([todoList, response.data]);
+      console.log(response.data);
+      setTodoList([...todoList, response.data.data]);
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +31,18 @@ function TodoContextProvider({ children }) {
   const updateTodo = async (todoId, updateData) => {
     try {
       const response = await todoAPI.updateTodo(todoId, updateData);
-      setTodoList([...todoList, response.data]);
+      console.log(response.data.data)
+      setTodoList((prev) =>
+        prev.reduce((acc, todo) => {
+          if (todo?.id === todoId) {
+            acc.push(response.data.data);
+            return acc;
+          } else {
+            acc.push(todo);
+            return acc;
+          }
+        }, [])
+      );
     } catch (error) {
       console.log(error);
     }
@@ -40,10 +52,12 @@ function TodoContextProvider({ children }) {
   const deleteTodo = async (todoId) => {
     try {
       await todoAPI.deleteTodo(todoId);
+      setTodoList((prev) => prev.filter((todo) => todo.id !== todoId));
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(todoList);
 
   return (
     <TodoContext.Provider

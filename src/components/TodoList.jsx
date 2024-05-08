@@ -3,27 +3,52 @@ import { TodoContext } from "../contexts/TodoContext";
 
 function TodoList({ todoId, todo }) {
   // Use Delete functionality from TodoContext
-  const { getAllTodos, deleteTodo } = useContext(TodoContext);
+  const { getAllTodos, deleteTodo, updateTodo } = useContext(TodoContext);
 
-  // useState and handler for delete task
+  // useState for delete task -- NEED TO OPTIMIZE ***
   const [isDelete, setIsDelete] = useState(false);
+  // useState for change task status
+  const [isChecked, setIsChecked] = useState(false);
 
+  // Handler for delete task -- NEED TO OPTIMIZE ***
   const handleDelete = () => {
+    console.log(todoId);
     setIsDelete(!isDelete);
     deleteTodo(todoId);
   };
 
-  // Re-fetch when use delete the task -- *** NEED TO BE REFACTORED IN FUTURE *** --
-  useEffect(() => {
-    getAllTodos();
-  }, [isDelete]);
+  const handleChecked = async () => {
+    console.log(isChecked);
+    setIsChecked((pre) => {
+      return !pre;
+    });
+    console.log(isChecked);
+    const data = {
+      title: `${todo}`,
+      status: !isChecked,
+    };
+    await updateTodo(todoId, data);
+
+    //   if (isChecked) {
+    //     await updateTodo(todoId, {
+    //       title: `${todo}`,
+    //       status: true,
+    //     });
+    //   } else {
+    //     await updateTodo(todoId, {
+    //       title: `${todo}`,
+    //       status: true,
+    //     });
+    //   }
+  };
+  console.log(isChecked);
 
   // UI
   return (
     <div className=" flex justify-between p-2">
       <div className="flex gap-3">
-        <input type="checkbox" className="checkbox" />
-        <p>{todo}</p>
+        <input type="checkbox" className="checkbox" onClick={handleChecked} />
+        <p className={isChecked ? "line-through" : ""}>{todo}</p>
       </div>
       <button
         className="text-gray-400 rounded-lg hover:bg-gray-200 hover:text-gray-900"
