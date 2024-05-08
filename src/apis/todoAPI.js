@@ -2,13 +2,13 @@ import axios from "./axios.config";
 
 // POST -- createTodo
 export const createTodo = async (data) => {
-  return await axios.post(`v1/todo?userId=27`, data);
+  return await axios.post(`/v1/todo?userId=27`, data);
 };
 
 // GET -- getAllTodos
 
 export const getAllTodos = async () => {
-  return await axios.get(`v1/todo?userId=27`);
+  return await axios.get(`/v1/todo?userId=27`);
 };
 
 // GET -- getTodo

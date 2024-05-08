@@ -5,8 +5,8 @@ import { AuthContext } from "../contexts/AuthContext";
 function LoginPage() {
   const navigate = useNavigate();
 
-  // Use login from AuthContext
-  const { userData, login, logout } = useContext(AuthContext);
+  // Use login functionality from AuthContext
+  const { login } = useContext(AuthContext);
 
   // useState and Handler for receiving Email and Password data
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ function LoginPage() {
 
   return (
     <div className="flex h-screen w-screen justify-center items-center ">
-      <div className="container w-2/3 flex-col items-center  space-y-10 p-8 bg-slate-300 rounded-xl">
+      <div className="container w-1/2 flex-col items-center  space-y-10 p-8 bg-slate-300 rounded-xl">
         <h1 className="text-4xl font-extrabold ">Welcome</h1>
         <form onSubmit={handleLogin} className="flex-col">
           <label className="label flex items-center">

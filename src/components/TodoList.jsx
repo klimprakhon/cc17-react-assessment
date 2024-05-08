@@ -1,4 +1,10 @@
+import { useState, useContext } from "react";
+import { TodoContext } from "../contexts/TodoContext";
+
 function TodoList() {
+
+
+
   return (
     <div className=" flex justify-between p-2">
       <div className="flex gap-3">
