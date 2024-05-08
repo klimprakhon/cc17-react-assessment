@@ -134,7 +134,7 @@ async function getMe() {
 - [✔︎] Using React Router for Routing (10pts)
 - [ ] New Feature or Amazing UI (Depend on your creativity) (15pts)
 - [✔︎] Deploy to Vercel or Netlify (15pts)
-- paste your link here 
+- paste your link here https://cc17-react-assessment-klimprakhon.vercel.app/
 
 ## Part-4 : Become Extraordinary Developer (100pts)
 
