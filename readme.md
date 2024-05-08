@@ -49,7 +49,7 @@ Please follow these conditions before code!
 // You can use this function for getMe
 async function getMe() {
   let token; // get token from somewhere
-  const res = await fetch('base_url/auth/me', {
+  const res = await fetch("base_url/auth/me", {
     headers: {
       Authorization: `Bearer ${token}`, // put your token here
     },
@@ -82,20 +82,20 @@ async function getMe() {
 
 ### 1A : Project Setup (10pts)
 
-- [ ] Create Project with Create React App or ViteJs
-- [ ] Clean up unused files and code
-- [ ] Install dependencies or packages that you need for this project
-- [ ] Pick some CSS Framework and Install eg. Bootstrap, Tailwind, Scss, Vanilla css or MUI
+- [✔︎] Create Project with Create React App or ViteJs
+- [✔︎] Clean up unused files and code
+- [✔︎] Install dependencies or packages that you need for this project
+- [✔︎] Pick some CSS Framework and Install eg. Bootstrap, Tailwind, Scss, Vanilla css or MUI
 - [ ] Setup Well-organized Folder Structure
-- [ ] Using Git and Github for Version Control System
-- [ ] Using Comand Line for run project
+- [✔︎] Using Git and Github for Version Control System
+- [✔︎] Using Command Line for run project
 
 ### 1B : Build UI with React Component (20pts)
 
-- [ ] Understand UI Design and UI Flow (Figma)
-- [ ] Write Clean & Reausable UI
-- [ ] Good Naming for Component
-- [ ] Manage UI state appropriately
+- [✔︎] Understand UI Design and UI Flow (Figma)
+- [✔︎] Write Clean & Reausable UI
+- [✔︎] Good Naming for Component
+- [✔︎] Manage UI state appropriately
 
 ### 1C : Precise UI with Design (20pts)
 
@@ -106,19 +106,19 @@ async function getMe() {
 
 ### 2A : Auth and Login (15pts)
 
-- [ ] Login with email and password
-- [ ] Can submit form with Enter key or Button
-- [ ] Implement State Management for Login Page
-- [ ] Connect to API
-- [ ] Can Login
+- [✔︎] Login with email and password
+- [✔︎] Can submit form with Enter key or Button
+- [✔︎] Implement State Management for Login Page
+- [✔︎] Connect to API
+- [✔︎] Can Login
 
 ### 2B : List Manipulate (35pts)
 
-- [ ] Show List when Render Page (State Management & API)
-- [ ] Can Create List item (State Management & API)
-- [ ] Can Update List item (State Management & API)
-- [ ] Can Delete List item (State Management & API)
-- [ ] Can Logout (State Management & API)
+- [✔︎] Show List when Render Page (State Management & API)
+- [✔︎] Can Create List item (State Management & API)
+- [✔︎] Can Update List item (State Management & API)
+- [✔︎] Can Delete List item (State Management & API)
+- [✔︎] Can Logout (State Management & API)
 
 #### suggestion
 
@@ -127,14 +127,14 @@ async function getMe() {
 
 ## Part-3 : Bonus (0-100pts)
 
-- [ ] Implement Validation in Login Page (10pts)
+- [✔︎] Implement Validation in Login Page (10pts)
 - [ ] Implement Validation in Todo Page (10pts)
 - [ ] Feature Register and Register Page(20pts)
-- [ ] Using Context API for State Management (20pts)
-- [ ] Using React Router for Routing (10pts)
+- [✔︎] Using Context API for State Management (20pts)
+- [✔︎] Using React Router for Routing (10pts)
 - [ ] New Feature or Amazing UI (Depend on your creativity) (15pts)
-- [ ] Deploy to Vercel or Netlify (15pts)
-- paste your link here
+- [✔︎] Deploy to Vercel or Netlify (15pts)
+- paste your link here 
 
 ## Part-4 : Become Extraordinary Developer (100pts)
 
