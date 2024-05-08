@@ -3,7 +3,7 @@ function TodoList() {
     <div className=" flex justify-between p-2">
       <div className="flex gap-3">
         <input type="checkbox" className="checkbox" />
-        <p>Here's a task name</p>
+        <p>Here a task name</p>
       </div>
       <button className="text-gray-400 rounded-lg hover:bg-gray-200 hover:text-gray-900">
         <svg

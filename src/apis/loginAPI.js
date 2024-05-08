@@ -1,5 +1,5 @@
 import axios from "./axios.config";
 
-export const getUserById = async (userData) => {
-    return await axios.get(`/auth/login`, userData);
-  };
+export const getUserByData = async (userData) => {
+  return await axios.get(`/auth/login`, userData);
+};
