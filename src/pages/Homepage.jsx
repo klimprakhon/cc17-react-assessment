@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import TodoList from "../components/TodoList";
 
 function Homepage() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
     <div className=" flex h-screen w-screen justify-center items-center">
       <div className="container w-1/2 flex-col items-center  space-y-4 p-8 bg-slate-300 rounded-xl">
@@ -18,7 +25,11 @@ function Homepage() {
         <TodoList />
         <TodoList />
         <TodoList />
-        <button type="button" className="btn btn-block flex text-2xl font-bold">
+        <button
+          type="button"
+          onClick={handleLogout}
+          className="btn btn-block flex text-2xl font-bold"
+        >
           LOG OUT
         </button>
       </div>
