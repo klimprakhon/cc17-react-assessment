@@ -1,14 +1,34 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 
-function TodoList({ task }) {
+function TodoList({ todoId, todo }) {
+  // Use Delete functionality from TodoContext
+  const { getAllTodos, deleteTodo } = useContext(TodoContext);
+
+  // useState and handler for delete task
+  const [isDelete, setIsDelete] = useState(false);
+
+  const handleDelete = () => {
+    setIsDelete(!isDelete);
+    deleteTodo(todoId);
+  };
+
+  // Re-fetch when use delete the task -- *** NEED TO BE REFACTORED IN FUTURE *** --
+  useEffect(() => {
+    getAllTodos();
+  }, [isDelete]);
+
+  // UI
   return (
     <div className=" flex justify-between p-2">
       <div className="flex gap-3">
         <input type="checkbox" className="checkbox" />
-        <p>{task}</p>
+        <p>{todo}</p>
       </div>
-      <button className="text-gray-400 rounded-lg hover:bg-gray-200 hover:text-gray-900">
+      <button
+        className="text-gray-400 rounded-lg hover:bg-gray-200 hover:text-gray-900"
+        onClick={handleDelete}
+      >
         <svg
           aria-hidden="true"
           className="w-5 h-5"

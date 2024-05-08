@@ -7,6 +7,9 @@ import TodoList from "../components/TodoList";
 function Homepage() {
   const navigate = useNavigate();
 
+  // Initialize state for Create new task situation
+  const [newTodo, setNewTodo] = useState("");
+
   // Use logout functionality from AuthContext
   const { logout } = useContext(AuthContext);
 
@@ -19,14 +22,14 @@ function Homepage() {
   const { createTodo, getAllTodos, todoList } = useContext(TodoContext);
 
   // getAllTodos -- to show all todo list
+  // Re-fetch when user create new task
 
   useEffect(() => {
     getAllTodos();
-  }, []);
+  }, [newTodo]);
 
   // Create todo functionality
   // useState and handler for create todo
-  const [newTodo, setNewTodo] = useState("");
 
   const handleChangeNewTodo = (event) => {
     setNewTodo(event.target.value);
@@ -39,6 +42,8 @@ function Homepage() {
     });
     setNewTodo("");
   };
+
+  // UI
 
   return (
     <div className=" flex h-screen w-screen justify-center items-center">
@@ -64,7 +69,7 @@ function Homepage() {
         </div>
 
         {todoList.map((item) => (
-          <TodoList key={item.id} task={item.title}/>
+          <TodoList key={item.id} todo={item.title} todoId={item.id} />
         ))}
         <button
           type="button"
